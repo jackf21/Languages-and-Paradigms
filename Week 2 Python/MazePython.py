@@ -2,7 +2,7 @@
 # Language - Python
 # Paradigm - Procedural
 
-from colorama import Fore, Back, Style
+#from colorama import Fore, Back, Style
 
 # Maze Map
 # Key: # = wall, 0 = free space ~ = water, A = Player, n = newline
