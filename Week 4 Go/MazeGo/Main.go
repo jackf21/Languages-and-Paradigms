@@ -26,6 +26,10 @@ var waterTick int = 0
 
 func drawMaze(playerPos [2]int) {
 	// start the water on the second loop
+	if waterTick%2 == 0 && waterTick != 0 {
+		spreadWater()
+	}
+	
 	if waterTick == 2 {
 		maze[0][1] = 2
 	}
@@ -34,9 +38,6 @@ func drawMaze(playerPos [2]int) {
 		maze[1][1] = 2
 	}
 
-	if waterTick%2 == 0 && waterTick != 0 {
-		spreadWater()
-	}
 
 	for i := 0; i < 19; i++ {
 		for j := 0; j < 19; j++ {
