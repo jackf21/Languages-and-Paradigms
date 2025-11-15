@@ -1,20 +1,84 @@
-// MazeCPP.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "Maze.h"
+#include "Player.h"
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Player* player = new Player(0, 1);
+
+    Maze* maze = new Maze(player);
+
+    while (maze->GetState() == 0) {
+        maze->drawMaze();
+        
+        char input;
+        
+        std::cout << "Input a direction: ";
+        std::cin >> input;
+        std::cout << std::endl;
+        
+        switch (input) {
+        // W
+        case 87:
+        case 119:
+            maze->movePlayer(-1, 0);
+            break;
+        // A
+        case 65:
+        case 97:
+            maze->movePlayer(0, -1);
+            break;
+        // S
+        case 83:
+        case 115:
+            maze->movePlayer(1, 0);
+            break;
+        // D
+        case 68:
+        case 100:
+            maze->movePlayer(0, 1);
+            break;
+        // E
+        case 69:
+        case 101:
+
+            char bombInput;
+            std::cout << "Input a direction: ";
+            std::cin >> bombInput;
+            
+            switch (bombInput) {
+            // W
+            case 87:
+            case 119:
+                maze->placeBomb(-1, 0);
+                break;
+            // A
+            case 65:
+            case 97:
+                maze->placeBomb(0, -1);
+                break;
+            // S
+            case 83:
+            case 115:
+                maze->placeBomb(1, 0);
+                break;
+            // D
+            case 68:
+            case 100:
+                maze->placeBomb(0, 1);
+                break;
+            }
+        }
+
+    }
+
+    if (maze->GetState() == 1) {
+        std::cout << "YOU WIN!!" << std::endl;
+    }
+    else {
+        std::cout << "you lost..." << std::endl;
+    }
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

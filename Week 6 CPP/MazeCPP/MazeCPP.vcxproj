@@ -125,6 +125,10 @@
   <ItemGroup>
     <ClCompile Include="MazeCPP.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Maze.h" />
+    <ClInclude Include="Player.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
