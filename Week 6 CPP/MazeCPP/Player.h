@@ -10,6 +10,10 @@ public:
 		m_numBombs(3) {}
 
 	inline void move(int& x, int& y) {
+		if (m_positionX + x > 19 || m_positionY + y > 19) {
+			return;
+		}
+
 		m_positionX += x;
 		m_positionY += y;
 	}

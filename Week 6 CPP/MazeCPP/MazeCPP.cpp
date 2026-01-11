@@ -79,6 +79,5 @@ int main()
     else {
         std::cout << "you lost..." << std::endl;
     }
-
 }
 

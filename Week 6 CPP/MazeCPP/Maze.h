@@ -57,7 +57,14 @@ public:
 	// Getting a tile in the maze realtive to the player's posiiton
 	inline int checkTile(int x, int y) {
 		//std::cout << x << " " << y << std::endl;
-		return m_maze[m_player->GetXPosition() + x][m_player->GetYPosition() + y];
+		int x_pos = m_player->GetXPosition();
+		int y_pos = m_player->GetYPosition();
+
+		if (x_pos + x > 19 || y_pos + y > 19) {
+			return 1;
+		}
+
+		return m_maze[x_pos + x][y_pos + y];
 	}
 
 	inline void movePlayer(int x, int y) {
