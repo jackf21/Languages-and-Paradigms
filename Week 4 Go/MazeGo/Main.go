@@ -92,6 +92,11 @@ func movePlayer(position [2]int, x int, y int) [2]int {
 		return position
 	}
 
+	if maze[position[0]+x][position[1]+y] == 2 {
+		fmt.Println("Movement blocked!")
+		return position
+	}
+
 	position[0] += x
 	position[1] += y
 
