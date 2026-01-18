@@ -54,7 +54,7 @@ public:
 		m_waterTick++;
 	}
 
-	// Getting a tile in the maze realtive to the player's posiiton
+	// Getting a tile in the maze relative to the player's posiiton
 	inline int checkTile(int x, int y) {
 		//std::cout << x << " " << y << std::endl;
 		int x_pos = m_player->GetXPosition();

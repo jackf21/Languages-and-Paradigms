@@ -54,7 +54,6 @@ placeBomb maze ch =
         Wall -> setTile maze r' c' Space
         _    -> maze
 
-
 -- Spread water: for each Water tile, turn adjacent Space tiles into Water (one-step spread)
 spreadWater :: [[MazeTile]] -> [[MazeTile]]
 spreadWater maze =

@@ -43,17 +43,17 @@ func drawMaze(playerPos [2]int) {
 	for i := 0; i < 19; i++ {
 		for j := 0; j < 19; j++ {
 			if i == playerPos[0] && j == playerPos[1] {
-				fmt.Printf("A")
+				fmt.Printf("A ")
 				continue
 			}
 
 			switch tile := maze[i][j]; tile {
 			case 0:
-				fmt.Print(" ")
+				fmt.Print("  ")
 			case 1:
-				fmt.Print("#")
+				fmt.Print("# ")
 			case 2:
-				fmt.Print("~")
+				fmt.Print("~ ")
 			default:
 				fmt.Println("Invalid Data in Maze")
 			}
@@ -64,7 +64,6 @@ func drawMaze(playerPos [2]int) {
 }
 
 func spreadWater() {
-	// Starting at 1 and ending at 18 to prevent accessing outside of the array bounds
 	var tempMaze [19][19]int = maze
 	for i := 1; i < 18; i++ {
 		for j := 1; j < 18; j++ {
